@@ -5,7 +5,7 @@ import { signUp } from "../validations/user";
 import { parseError, sessionizeUser } from "../util/helpers";
 
 const userRouter = express.Router();
-userRouter.post("", async (req, res) => {
+userRouter.post("/register", async (req, res) => {
   try {
     const { username, email, password } = req.body;
     await Joi.validate({ username, email, password }, signUp);
